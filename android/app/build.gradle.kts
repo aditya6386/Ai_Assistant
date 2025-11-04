@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.ai_assistant"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 35
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
