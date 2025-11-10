@@ -55,3 +55,14 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Secrets and API keys
+*.env
+*.env.local
+*.env.*.local
+config.dart
+secrets.dart
+**/secrets/
+**/config/
+.env
+.env.local
