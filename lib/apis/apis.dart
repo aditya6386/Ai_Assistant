@@ -11,7 +11,12 @@ class APIs {
   //get answer from google gemini ai
   static Future<String> getAnswer(String question) async {
     try {
-      log('api key: $apiKey');
+      // Check if API key is available
+      if (apiKey.isEmpty) {
+        return 'API Key not configured. Please check your Appwrite setup or configure the API key in the settings.';
+      }
+
+      log('api key: ${apiKey.isNotEmpty ? "***configured***" : "empty"}');
 
       final model = GenerativeModel(
         model: 'gemini-1.5-flash-latest',
@@ -28,10 +33,14 @@ class APIs {
 
       log('res: ${res.text}');
 
+      if (res.text == null || res.text!.isEmpty) {
+        return 'No response from AI. Please try again.';
+      }
+
       return res.text!;
     } catch (e) {
       log('getAnswerGeminiE: $e');
-      return 'Something went wrong (Try again in sometime)';
+      return 'Something went wrong (Try again in sometime). Error: ${e.toString()}';
     }
   }
 
