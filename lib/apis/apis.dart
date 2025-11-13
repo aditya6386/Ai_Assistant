@@ -18,8 +18,12 @@ class APIs {
 
       log('api key: ${apiKey.isNotEmpty ? "***configured***" : "empty"}');
 
+      final selectedModel =
+          geminiModel.isNotEmpty ? geminiModel : 'gemini-1.5-flash';
+      log('Using Gemini model: $selectedModel');
+
       final model = GenerativeModel(
-        model: 'gemini-1.5-flash-latest',
+        model: selectedModel,
         apiKey: apiKey,
       );
 
