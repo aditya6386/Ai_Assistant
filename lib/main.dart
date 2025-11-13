@@ -14,8 +14,8 @@ Future<void> main() async {
   // Initialize Hive for local storage
   await Pref.initialize();
   
-  // Initialize AppWrite to fetch API key
-  AppWrite.init();
+  // Initialize AppWrite to fetch API key (skips fetch if provided locally)
+  await AppWrite.init();
   
   // Initialize ads (only for mobile platforms)
   try {
