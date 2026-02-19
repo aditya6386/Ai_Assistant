@@ -19,6 +19,13 @@ subprojects {
     project.evaluationDependsOn(":app")
 }
 
+// Define global properties for legacy plugins that rely on rootProject.ext
+extra.apply {
+    set("compileSdkVersion", 35)
+    set("targetSdkVersion", 35)
+    set("minSdkVersion", 21)
+}
+
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }

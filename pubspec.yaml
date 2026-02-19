@@ -57,13 +57,17 @@ dependencies:
   translator_plus: ^1.0.1
 
   # For Saving Image to Gallery
-  gallery_saver_updated: ^3.0.0
 
   # For Sharing Image
   share_plus: ^9.0.0
 
   # Facebook Ads
-  easy_audience_network: ^0.0.6
+  easy_audience_network:
+    path: packages/easy_audience_network
+  gal: 2.2.3
+
+dependency_overrides:
+  flutter_web_auth_2: ^5.0.1
 
 dev_dependencies:
   flutter_test:

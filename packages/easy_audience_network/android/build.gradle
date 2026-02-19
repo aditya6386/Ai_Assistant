@@ -1,0 +1,43 @@
+group 'com.dsi.easy_audience_network'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 35
+    namespace 'com.dsi.easy_audience_network'
+    
+    defaultConfig {
+        minSdkVersion 21
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.5.1'
+
+    implementation 'com.facebook.android:audience-network-sdk:6.17.0'
+    implementation 'androidx.annotation:annotation:1.4.0'
+    compileOnly files('tempLibs/flutter.jar')
+}

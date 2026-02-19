@@ -3,6 +3,8 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  desktop_webview_window
+  gal
   share_plus
   url_launcher_windows
   window_to_front

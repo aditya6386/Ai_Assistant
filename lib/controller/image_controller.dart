@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:dart_openai/dart_openai.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:gallery_saver_updated/gallery_saver.dart';
+import 'package:gal/gal.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
@@ -89,7 +89,7 @@ class ImageController extends GetxController {
       log('filePath: $filePath');
       //save image to gallery (mobile only)
       try {
-        await GallerySaver.saveImage(filePath, albumName: appName);
+        await Gal.putImage(filePath, album: appName);
         //hide loading
         Get.back();
         MyDialog.success('Image Downloaded to Gallery!');
